@@ -3,6 +3,7 @@
 from __future__ import division
 from functools import reduce
 from operator import mul
+from fractions import Fraction
 
 def is_palindrome(str):
   return str == str[::-1]
@@ -20,16 +21,7 @@ def is_curious(num, den):
         else:
             return False
 
-def gcd(a, b):
-    if not b:
-        return a
-    else:
-        return gcd(b, a % b)
+curious_fractions = (Fraction(a, b) for b in range(10, 100) for a in range(10, b) if is_curious(a,b))
 
-curious_numerators = (a for b in range(10, 100) for a in range(10, b) if is_curious(a,b))
-curious_denominators = (b for b in range(10, 100) for a in range(10, b) if is_curious(a,b))
-
-num = reduce(mul, curious_numerators)
-den = reduce(mul, curious_denominators)
-print(den//gcd(num, den))
+print(reduce(mul, curious_fractions).denominator)
 
