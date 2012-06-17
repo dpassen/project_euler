@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
 
-def fib
-    Enumerator::Generator.new do |g|
-        a, b = 0, 1
-        loop do
-            g.yield a
-            a, b = b, a + b
-        end
+fib = Enumerator::Generator.new do |g|
+    a, b = 0, 1
+    loop do
+        g.yield a
+        a, b = b, a + b
     end
 end
 
