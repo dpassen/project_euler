@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-def _fib
+def fib
     Enumerator::Generator.new do |g|
         a, b = 0, 1
         loop do
@@ -10,4 +10,4 @@ def _fib
     end
 end
 
-puts _fib.take_while {|a| a < 4000000}.select {|i| i % 2 == 1}.reduce(:+)
+puts fib.take_while {|a| a < 4000000}.select {|i| i % 2 == 1}.reduce(:+)
