@@ -1,12 +1,6 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby -rubygems
 
-palindromes = Enumerator::Generator.new do |g|
-    (100..999).each do |i|
-        (100..999).each do |j|
-            product = i * j
-            g.yield product if product.to_s == product.to_s.reverse
-        end
-    end
-end
+require 'Cartesian'
 
-puts palindromes.max
+puts (100...1000).cartesian(100...1000).collect{|i,j| i * j}.select{|p| p.to_s == p.to_s.reverse}.max
+
