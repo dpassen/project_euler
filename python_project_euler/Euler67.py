@@ -1,6 +1,6 @@
 #!/usr/bin/env python -tt
 
-with open('data_files/triangle.txt') as f:
+with open('../data_files/triangle.txt') as f:
     triangle = f.read().strip().split('\n')
     triangle = [[int(num) for num in row.split()] for row in triangle]
     triangle.reverse()
