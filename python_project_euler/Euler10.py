@@ -3,8 +3,9 @@
 from itertools import takewhile
 from math import sqrt, floor
 
+
 def primes():
-    composites = {} 
+    composites = {}
     n = 2
     while True:
         if n not in composites:
@@ -18,8 +19,8 @@ def primes():
             composites[next] = witness
         n += 1
 
+
 def primes_up_to(limit):
     return takewhile(lambda p: p <= limit, primes())
 
 print(sum(primes_up_to(2000000)))
-

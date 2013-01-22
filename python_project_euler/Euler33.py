@@ -5,8 +5,10 @@ from functools import reduce
 from operator import mul
 from fractions import Fraction
 
+
 def is_palindrome(str):
-  return str == str[::-1]
+    return str == str[::-1]
+
 
 def is_curious(num, den):
     if (is_palindrome(str(num)) and is_palindrome(str(den))):
@@ -21,7 +23,6 @@ def is_curious(num, den):
         else:
             return False
 
-curious_fractions = (Fraction(a, b) for b in range(10, 100) for a in range(10, b) if is_curious(a,b))
+curious_fractions = (Fraction(a, b) for b in range(10, 100) for a in range(10, b) if is_curious(a, b))
 
 print(reduce(mul, curious_fractions).denominator)
-

@@ -1,7 +1,8 @@
 #!/usr/bin/env python -tt
 
+
 def primes():
-    composites = {} 
+    composites = {}
     n = 2
     while True:
         if n not in composites:
@@ -14,6 +15,7 @@ def primes():
                 next += witness
             composites[next] = witness
         n += 1
+
 
 def get_prime(num):
     p = primes()

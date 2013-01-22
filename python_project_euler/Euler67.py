@@ -8,7 +8,7 @@ with open('../data_files/triangle.txt') as f:
     for row_index, row in enumerate(triangle):
         if row_index != 0:
             for index, num in enumerate(row):
-                triangle[row_index][index] += max(triangle[row_index - 1][index], triangle[row_index - 1][index + 1])
+                triangle[row_index][index] += max(triangle[row_index - 1][index],
+                                                  triangle[row_index - 1][index + 1])
 
     print(triangle[-1][0])
-

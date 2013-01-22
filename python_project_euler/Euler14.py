@@ -1,5 +1,6 @@
 #!/usr/bin/env python -tt
 
+
 def generate_seq(seed):
     seq = []
     seq.append(seed)
@@ -7,6 +8,7 @@ def generate_seq(seed):
         seed = (3 * seed + 1) if (seed % 2) else (seed // 2)
         seq.append(seed)
     return seq
+
 
 def generate_seqlength(max):
     for i in range(1, max + 1):

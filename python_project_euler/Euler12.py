@@ -3,8 +3,10 @@
 from math import sqrt, ceil
 from itertools import count
 
+
 def triangle_number(num):
     return (num * (num + 1)) // 2
+
 
 def get_factors(num):
     factors = []
@@ -15,9 +17,9 @@ def get_factors(num):
             factors.append(recip)
     return factors
 
+
 for i in count():
     num = triangle_number(i)
     if len(get_factors(num)) > 500:
         print(num)
         break
-

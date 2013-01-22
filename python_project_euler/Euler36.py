@@ -1,5 +1,6 @@
 #!/usr/bin/env python -tt
 
+
 def is_palindrome(value):
     str_value = str(value)
     return str_value == str_value[::-1]

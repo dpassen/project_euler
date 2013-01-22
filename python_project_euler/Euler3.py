@@ -8,5 +8,5 @@ def prime_factors(num):
             yield i
             num /= i
         i += 1
-        
+
 print(max(prime_factors(600851475143)))
