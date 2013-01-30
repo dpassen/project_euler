@@ -18,11 +18,12 @@ def is_curious(num, den):
         second_num = num % 10
         first_den = den // 10
         second_den = den % 10
-        if (second_den and (first_num/second_den) == (num/den) and second_num == first_den):
+        if second_den and (first_num/second_den) == (num/den) and second_num == first_den:
             return True
         else:
             return False
 
-curious_fractions = (Fraction(a, b) for b in range(10, 100) for a in range(10, b) if is_curious(a, b))
+curious_fractions = (Fraction(a, b) for b in range(10, 100)
+                     for a in range(10, b) if is_curious(a, b))
 
 print(reduce(mul, curious_fractions).denominator)

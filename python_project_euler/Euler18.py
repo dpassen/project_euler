@@ -17,7 +17,8 @@ triangle = """
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
 
-triangle = [[int(num) for num in row.split()] for row in triangle.strip().split('\n')]
+triangle = [[int(num) for num in row.split()]
+            for row in triangle.strip().split('\n')]
 triangle.reverse()
 
 for row_index, row in enumerate(triangle):
