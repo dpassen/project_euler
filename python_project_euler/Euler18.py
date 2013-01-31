@@ -24,7 +24,8 @@ triangle.reverse()
 for row_index, row in enumerate(triangle):
     if row_index != 0:
         for index, num in enumerate(row):
-            triangle[row_index][index] += max(triangle[row_index - 1][index],
-                                              triangle[row_index - 1][index + 1])
+            previous_row = triangle[row_index - 1]
+            triangle[row_index][index] += max(previous_row[index],
+                                              previous_row[index + 1])
 
 print(triangle[-1][0])
