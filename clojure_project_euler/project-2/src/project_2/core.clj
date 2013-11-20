@@ -12,5 +12,5 @@
       (filter
         even?
         (take-while
-          #(< % 4000000)
+          (partial > 4000000)
           (fibs))))))
