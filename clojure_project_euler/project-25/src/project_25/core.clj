@@ -1,6 +1,6 @@
 (ns project-25.core)
 
-(def fibs (map first (iterate (fn [[a b]] [b (+ a b)]) [0M 1M])))
+(def fibs (map first (iterate (fn [[a b]] [b (+ a b)]) [0N 1N])))
 
 (defn -main [& args]
   (->> fibs
