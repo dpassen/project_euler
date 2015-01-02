@@ -10,7 +10,7 @@ def triangle_number(num):
 
 def get_factors(num):
     factors = []
-    for i in range(1, ceil(sqrt(num))):
+    for i in range(1, int(ceil(sqrt(num)))):
         if not num % i:
             recip = num // i
             factors.append(i)
