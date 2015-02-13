@@ -3,7 +3,7 @@
 (defn corners [n]
   (set
    (for [x (range 4)]
-     (- (* n n) (* x (- n 1))))))
+     (- (* n n) (* x (dec n))))))
 
 (defn -main [& args]
   (->> (range 1 1002 2)
