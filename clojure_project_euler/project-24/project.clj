@@ -1,0 +1,5 @@
+(defproject project-24 "0.1.0-SNAPSHOT"
+  :description "Project Euler 24 in Clojure"
+  :dependencies [[org.clojure/clojure            "1.7.0"]
+                 [org.clojure/math.combinatorics "0.1.1"]]
+  :main project-24.core)
