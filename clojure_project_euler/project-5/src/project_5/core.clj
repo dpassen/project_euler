@@ -1,5 +1,6 @@
 (ns project-5.core
-  (:require [clojure.math.numeric-tower :refer [lcm]]))
+  (:require
+   [clojure.math.numeric-tower :refer [lcm]]))
 
 (defn -main [& args]
   (->> (range 2 21)

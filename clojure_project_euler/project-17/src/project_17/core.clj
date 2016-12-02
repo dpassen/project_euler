@@ -1,6 +1,7 @@
 (ns project-17.core
-  (:require [clojure.pprint :as pprint]
-            [clojure.string :as string]))
+  (:require
+   [clojure.pprint :as pprint]
+   [clojure.string :as string]))
 
 (defn -main [& args]
   (->> (range 1 1001)

@@ -1,5 +1,6 @@
 (ns project-23.core
-  (:require [clojure.math.numeric-tower :refer [floor sqrt]]))
+  (:require
+   [clojure.math.numeric-tower :refer [floor sqrt]]))
 
 (defn factors [num]
   (->> (for [x (range 1 (inc (floor (sqrt num))))

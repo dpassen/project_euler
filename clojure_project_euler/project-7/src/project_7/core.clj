@@ -1,5 +1,6 @@
 (ns project-7.core
-  (:require [clojure.math.numeric-tower :refer [floor sqrt]]))
+  (:require
+   [clojure.math.numeric-tower :refer [floor sqrt]]))
 
 (defn prime? [num]
   (cond

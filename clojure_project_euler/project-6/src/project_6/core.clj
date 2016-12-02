@@ -1,5 +1,6 @@
 (ns project-6.core
-  (:require [clojure.math.numeric-tower :refer [abs expt]]))
+  (:require
+   [clojure.math.numeric-tower :refer [abs expt]]))
 
 (defn- square [x] (expt x 2))
 

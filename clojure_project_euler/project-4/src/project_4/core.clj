@@ -1,5 +1,6 @@
 (ns project-4.core
-  (:require [clojure.string :as str]))
+  (:require
+   [clojure.string :as str]))
 
 (defn -main [& args]
   (->> (for [x (range 100 1000)
