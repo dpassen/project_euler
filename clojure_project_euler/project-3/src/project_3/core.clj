@@ -3,22 +3,18 @@
    [clojure.math.numeric-tower :refer [floor sqrt]]))
 
 (defn factors [num]
-  (->> (for [x (range 1 (inc (floor (sqrt num))))
-             :when (zero? (mod num x))]
-         [x (/ num x)])
-       flatten
-       distinct))
+  (into
+   #{}
+   (comp
+    (filter (comp zero? (partial mod num)))
+    (mapcat (juxt identity (partial / num))))
+   (range 1 (inc (floor (sqrt num))))))
 
 (defn prime? [num]
-  (cond
-    (>= 1 num) false
-    :else (empty? (for [x (range 2 (inc (floor (sqrt num))))
-                        :when (zero? (mod num x))]
-                    x))))
+  (when (< 1 num)
+    (empty? (for [x (range 2 (inc (floor (sqrt num))))
+                  :when (zero? (mod num x))]
+              x))))
 
 (defn -main [& args]
-  (->> 600851475143
-       factors
-       (filter prime?)
-       (apply max)
-       println))
+  (println (transduce (filter prime?) max 0 (factors 600851475143))))

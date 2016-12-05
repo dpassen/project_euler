@@ -2,15 +2,14 @@
   (:require
    [clojure.math.numeric-tower :refer [floor sqrt]]))
 
-(defn divisors [num]
-  (->> (for [x (range 1 (inc (floor (sqrt num))))
-             :when (zero? (mod num x))]
-         [x (/ num x)])
-       flatten
-       distinct))
-
 (defn proper-divisors [num]
-  (remove #{num} (divisors num)))
+  (into
+   #{}
+   (comp
+    (filter (comp zero? (partial mod num)))
+    (mapcat (juxt identity (partial / num)))
+    (remove #{num}))
+   (range 1 (inc (floor (sqrt num))))))
 
 (defn amicable? [num]
   (let [pair (reduce + (proper-divisors num))]
@@ -19,7 +18,4 @@
      (= num (reduce + (proper-divisors pair))))))
 
 (defn -main [& args]
-  (->> (range 1 10000)
-       (filter amicable?)
-       (reduce +)
-       println))
+  (println (transduce (filter amicable?) + (range 1 10000))))

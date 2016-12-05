@@ -12,9 +12,10 @@
 (def primes (filter prime? (range)))
 
 (defn quadratic-primes [a b]
-  (->> (range)
-       (map (fn [n] (+ (* n n) (* a n) b)))
-       (take-while prime?)))
+  (sequence
+   (comp (map (fn [n] (+ (* n n) (* a n) b)))
+         (take-while prime?))
+   (range)))
 
 (defn -main [& args]
   (->> (for [a (range -1000 1001)

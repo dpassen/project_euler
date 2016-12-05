@@ -3,6 +3,4 @@
    [clojure.math.numeric-tower :refer [lcm]]))
 
 (defn -main [& args]
-  (->> (range 2 21)
-       (reduce lcm)
-       println))
+  (println (reduce lcm (range 2 21))))

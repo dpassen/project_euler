@@ -1,14 +1,9 @@
 (ns project-15.core)
 
-(defn factorial
-  [n]
-  (->> (inc n)
-       (range 1N)
-       (reduce *)))
+(defn factorial [n] (reduce *' (range 1 n)))
 
 (defn lattice-paths
-  ([s]
-   (lattice-paths s s))
+  ([s] (lattice-paths s s))
   ([m n]
    (/ (factorial (+ m n))
       (factorial m)
@@ -16,6 +11,4 @@
 
 (defn -main
   [& args]
-  (-> 20
-      lattice-paths
-      println))
+  (println (lattice-paths 20)))
