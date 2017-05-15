@@ -9,17 +9,10 @@ def triangle_number(num):
 
 
 def get_factors(num):
-    factors = []
     for i in range(1, int(ceil(sqrt(num)))):
         if not num % i:
-            recip = num // i
-            factors.append(i)
-            factors.append(recip)
-    return factors
+            yield i
+            yield num // i
 
 
-for i in count():
-    num = triangle_number(i)
-    if len(get_factors(num)) > 500:
-        print(num)
-        break
+print(next(t for t in (triangle_number(i) for i in count()) if len(list(get_factors(t))) > 500))
