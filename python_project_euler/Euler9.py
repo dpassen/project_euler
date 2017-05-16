@@ -1,17 +1,12 @@
 #!/usr/bin/env python -tt
 
 
-def other_ones(num):
-    val = 1000 - num
-    for i in range(1, val // 2):
-        yield (i, val - i)
+def generate_triplets_equal_to(sum):
+    for c in range((sum // 2) + 1):
+        ab_sum = sum - c
+        for a,b in ((i, ab_sum - i) for i in range(1, (ab_sum // 2) + 1)):
+            if a ** 2 + b ** 2 == c ** 2:
+                yield(a, b, c)
 
-
-def generate_triplets_equal_to_1000():
-    for i in range(500):
-        for j in other_ones(i):
-            if j[0] ** 2 + j[1] ** 2 == i ** 2:
-                return (i, j[0], j[1])
-
-a, b, c = generate_triplets_equal_to_1000()
+a, b, c = next(generate_triplets_equal_to(1000))
 print(a * b * c)
