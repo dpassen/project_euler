@@ -1,0 +1,3 @@
+{:deps
+ {org.clojure/math.numeric-tower {:mvn/version "0.0.4"}
+  net.cgrand/xforms              {:mvn/version "0.16.0"}}}
