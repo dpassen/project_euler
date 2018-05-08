@@ -1,6 +1,6 @@
 (ns project-1)
 
-(defn -main []
+(defn -main [& args]
   (println
    (transduce
     (filter #(or (zero? (mod % 3))
