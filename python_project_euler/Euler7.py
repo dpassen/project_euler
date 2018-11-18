@@ -1,6 +1,9 @@
 #!/usr/bin/env python -tt
 
 
+from itertools import islice
+
+
 def primes():
     composites = {}
     n = 2
@@ -18,9 +21,7 @@ def primes():
 
 
 def get_prime(num):
-    p = primes()
-    for _ in range(num):
-        i = next(p)
-    return i
+    return next(islice(primes(), num - 1, num))
+
 
 print(get_prime(10001))
