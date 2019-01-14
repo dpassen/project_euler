@@ -15,9 +15,8 @@
 
 (defn -main [& args]
   (->> (eduction
-        (comp
-         (map triangle-num)
-         (map (juxt identity factors)))
+        (map triangle-num)
+        (map (juxt identity factors))
         (range))
        (some (fn [[n fs]] (when (< 500 (count fs)) n)))
        println))
