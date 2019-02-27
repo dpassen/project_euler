@@ -5,7 +5,7 @@
          acc #{}]
     (if (or (zero? rem) (acc rem))
       (dec (count acc))
-      (recur (* 10 (mod rem num)) (conj acc rem)))))
+      (recur (long (* 10 (mod rem num))) (conj acc rem)))))
 
 (defn -main [& args]
   (->> (range 1 1000)
