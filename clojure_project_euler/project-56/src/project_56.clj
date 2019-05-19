@@ -1,7 +1,7 @@
 (ns project-56
   (:require
    [clojure.math.numeric-tower :refer [expt]]
-   [net.cgrand.xforms.rfs      :as rfs]))
+   [net.cgrand.xforms.rfs :as rfs]))
 
 (defn -main [& args]
   (letfn [(digital-sum [n]

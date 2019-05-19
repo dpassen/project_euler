@@ -1,7 +1,7 @@
 (ns project-4
   (:require
    [clojure.math.combinatorics :as combinatorics]
-   [clojure.string             :as str]))
+   [clojure.string :as str]))
 
 (defn -main [& args]
   (println
