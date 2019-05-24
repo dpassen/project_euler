@@ -24,31 +24,31 @@ grid = [[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8]
 
 def generate_sums(row):
     for index, num in enumerate(row[:-3]):
-        yield(num * row[index + 1] * row[index + 2] * row[index + 3])
+        yield num * row[index + 1] * row[index + 2] * row[index + 3]
 
 
 def generate_max(grid):
-    #horizontal
+    # horizontal
     for row in grid:
-        yield(max(generate_sums(row)))
+        yield max(generate_sums(row))
 
-    #vertical
+    # vertical
     for row in zip(*grid):
-        yield(max(generate_sums(row)))
+        yield max(generate_sums(row))
 
-    #diagonal
+    # diagonal
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             try:
-                yield(grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3])
+                yield grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
             except:
-                yield(0)
+                yield 0
 
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             try:
-                yield(grid[i][j] * grid[i - 1][j + 1] * grid[i - 2][j + 2] * grid[i - 3][j + 3])
+                yield grid[i][j] * grid[i - 1][j + 1] * grid[i - 2][j + 2] * grid[i - 3][j + 3]
             except:
-                yield(0)
+                yield 0
 
 print(max(generate_max(grid)))
