@@ -2,7 +2,7 @@
   (:require
    [clojure.math.numeric-tower :refer [expt]]))
 
-(defn -main [& args]
+(defn -main [& _args]
   (letfn [(last-n [n s] (subs s (- (count s) n)))]
     (println
      (last-n 10

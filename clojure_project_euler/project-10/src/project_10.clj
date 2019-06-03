@@ -10,6 +10,6 @@
               primes))]
     (sieve (range 2 (inc upper)) [])))
 
-(defn -main [& args]
+(defn -main [& _args]
   (println
    (reduce + (primes-up-to 2000000))))

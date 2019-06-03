@@ -7,7 +7,7 @@
       (dec (count acc))
       (recur (long (* 10 (mod rem num))) (conj acc rem)))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (->> (range 1 1000)
        (map (juxt identity cycle-length))
        (apply max-key second)

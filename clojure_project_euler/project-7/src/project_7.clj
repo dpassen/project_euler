@@ -10,5 +10,5 @@
 
 (def primes (filter prime? (range)))
 
-(defn -main [& args]
+(defn -main [& _args]
   (println (nth primes 10000)))

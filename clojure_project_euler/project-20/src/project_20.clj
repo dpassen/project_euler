@@ -1,6 +1,6 @@
 (ns project-20)
 
-(defn -main [& args]
+(defn -main [& _args]
   (letfn [(factorial [n] (reduce *' (range 1 n)))]
     (println
      (str

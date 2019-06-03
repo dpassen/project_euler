@@ -13,7 +13,7 @@
       (when-not (= 1 seed)
         (lazy-seq (collatz-seq (next-num seed))))))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (->> (range 1 1000000)
        (map (juxt identity (comp count collatz-seq)))
        (apply max-key second)

@@ -16,5 +16,5 @@
                   :when (zero? (mod num x))]
               x))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (println (transduce (filter prime?) max 0 (factors 600851475143))))

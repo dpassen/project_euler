@@ -17,7 +17,7 @@
          (take-while prime?))
    (range)))
 
-(defn -main [& args]
+(defn -main [& _args]
   (->> (for [a (range -1000 1001)
              b (take-while (partial > 1001) primes)] ;for n^2 + an + b to be prime when n = 0,
                                                      ;b must be prime

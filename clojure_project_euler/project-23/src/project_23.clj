@@ -13,7 +13,7 @@
 (defn abundant? [num]
   (> (reduce + (factors num)) (* 2 num)))
 
-(defn -main [& args]
+(defn -main [& _args]
   (let [high      28123
         abundants (into #{} (filter abundant?) (range 1 high))]
     (println

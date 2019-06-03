@@ -13,7 +13,7 @@
     (mapcat (juxt identity (partial / num))))
    (range 1 (inc (floor (sqrt num))))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (->> (eduction
         (map triangle-num)
         (map (juxt identity factors))

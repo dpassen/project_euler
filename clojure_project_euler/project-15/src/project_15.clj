@@ -10,5 +10,5 @@
       (factorial n))))
 
 (defn -main
-  [& args]
+  [& _args]
   (println (lattice-paths 20)))

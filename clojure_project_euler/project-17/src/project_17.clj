@@ -3,7 +3,7 @@
    [clojure.pprint :as pprint]
    [clojure.string :as string]))
 
-(defn -main [& args]
+(defn -main [& _args]
   (println
    (transduce
     (comp

@@ -3,7 +3,7 @@
    [clojure.math.numeric-tower :refer [expt]]
    [net.cgrand.xforms.rfs :as rfs]))
 
-(defn -main [& args]
+(defn -main [& _args]
   (letfn [(digital-sum [n]
             (transduce (comp (map str) (map #(Long/parseLong %))) + (str n)))]
     (->> (for [a (range 1 101)

@@ -17,5 +17,5 @@
      (not= num pair)
      (= num (reduce + (proper-divisors pair))))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (println (transduce (filter amicable?) + (range 1 10000))))

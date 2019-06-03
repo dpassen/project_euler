@@ -3,7 +3,7 @@
    [clojure.java.io :as io]
    [clojure.string  :as str]))
 
-(defn -main [& args]
+(defn -main [& _args]
   (letfn [(parse-nums [line] (map #(Long/parseLong %) (str/split line #"\s+")))]
     (with-open [rdr (io/reader "../../data_files/67.txt")]
       (println
