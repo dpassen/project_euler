@@ -13,4 +13,5 @@ def gcd(a, b):
 def lcm(a, b):
     return abs(a * b) // gcd(a, b)
 
+
 print(reduce(lcm, range(2, 21)))

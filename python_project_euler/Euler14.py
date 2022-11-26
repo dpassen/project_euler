@@ -13,4 +13,5 @@ def generate_seqlength(max):
     for i in range(1, max + 1):
         yield len(generate_seq(i)), i
 
+
 print(max(generate_seqlength(1000000))[1])

@@ -9,8 +9,9 @@ def scale_name_by_index(names):
     for index, name in enumerate(names):
         yield (index + 1) * sum_ordinal_values_of_text(name)
 
-with open('../data_files/22.txt') as f:
-    names = f.read().replace('"', '').split(',')
+
+with open("../data_files/22.txt") as f:
+    names = f.read().replace('"', "").split(",")
     names.sort()
 
     print(sum(scale_name_by_index(names)))

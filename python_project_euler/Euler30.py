@@ -10,4 +10,5 @@ def generate_nth_power_equalities(n, upper_bound):
         if num == sum_of_nth_power_of_digits(n, num):
             yield num
 
+
 print(sum(generate_nth_power_equalities(5, 1000000)))

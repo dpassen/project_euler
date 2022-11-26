@@ -29,4 +29,5 @@ def prime_factors(limit):
         if not limit % prime:
             yield prime
 
+
 print(max(prime_factors(600851475143)))

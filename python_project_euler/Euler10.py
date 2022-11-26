@@ -1,7 +1,6 @@
 #!/usr/bin/env python -tt
 
 from itertools import takewhile
-from math import sqrt, floor
 
 
 def primes():
@@ -22,5 +21,6 @@ def primes():
 
 def primes_up_to(limit):
     return takewhile(lambda p: p <= limit, primes())
+
 
 print(sum(primes_up_to(2000000)))

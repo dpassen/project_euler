@@ -15,4 +15,10 @@ def get_factors(num):
             yield num // i
 
 
-print(next(t for t in (triangle_number(i) for i in count()) if len(list(get_factors(t))) > 500))
+print(
+    next(
+        t
+        for t in (triangle_number(i) for i in count())
+        if len(list(get_factors(t))) > 500
+    )
+)

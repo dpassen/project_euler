@@ -7,6 +7,7 @@ def _fib():
         yield a
         a, b = b, a + b
 
+
 for i, v in enumerate(_fib()):
     if len(str(v)) == 1000:
         print(i)
