@@ -3,13 +3,14 @@
 import calendar
 from datetime import date, timedelta
 
-date = date(1901, 1, 1)
-count = 0
 
-while date.year < 2001:
-    if date.isoweekday() == 7:
-        count += 1
-    days = calendar.monthrange(date.year, date.month)[1]
-    date += timedelta(days=days)
+def sundays(date):
+    while date.year < 2001:
+        if date.isoweekday() == 7:
+            yield date
+        days = calendar.monthrange(date.year, date.month)[1]
+        date += timedelta(days=days)
 
-print(count)
+
+start_date = date(1901, 1, 1)
+print(len(list(sundays(start_date))))
