@@ -1,7 +1,8 @@
 (ns project-29
   (:require [clojure.math.numeric-tower :refer [expt]]))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (println
    (count
     (distinct

@@ -1,9 +1,12 @@
 (ns project-15)
 
-(defn factorial [n] (reduce *' (range 1 n)))
+(defn factorial
+  [n]
+  (reduce *' (range 1 n)))
 
 (defn lattice-paths
-  ([s] (lattice-paths s s))
+  ([s]
+   (lattice-paths s s))
   ([m n]
    (/ (factorial (+ m n))
       (factorial m)

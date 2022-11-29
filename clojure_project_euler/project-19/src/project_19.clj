@@ -1,7 +1,8 @@
 (ns project-19
   (:require [java-time :as time]))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (println
    (count
     (filter

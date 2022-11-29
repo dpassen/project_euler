@@ -2,7 +2,8 @@
   (:require
    [clojure.math.numeric-tower :refer [floor sqrt]]))
 
-(defn factors [num]
+(defn factors
+  [num]
   (into
    #{}
    (comp
@@ -10,10 +11,12 @@
     (mapcat (juxt identity (partial / num))))
    (range 1 (inc (floor (sqrt num))))))
 
-(defn abundant? [num]
+(defn abundant?
+  [num]
   (> (reduce + (factors num)) (* 2 num)))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (let [high      28123
         abundants (into #{} (filter abundant?) (range 1 high))]
     (println

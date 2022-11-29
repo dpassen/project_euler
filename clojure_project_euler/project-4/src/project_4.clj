@@ -3,7 +3,8 @@
    [clojure.math.combinatorics :as combinatorics]
    [clojure.string :as str]))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (println
    (transduce
     (comp

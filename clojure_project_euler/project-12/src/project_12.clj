@@ -2,10 +2,12 @@
   (:require
    [clojure.math.numeric-tower :refer [floor sqrt]]))
 
-(defn triangle-num [n]
+(defn triangle-num
+  [n]
   (quot (* n (inc n)) 2))
 
-(defn factors [num]
+(defn factors
+  [num]
   (into
    #{}
    (comp
@@ -13,7 +15,8 @@
     (mapcat (juxt identity (partial / num))))
    (range 1 (inc (floor (sqrt num))))))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (->> (eduction
         (map triangle-num)
         (map (juxt identity factors))

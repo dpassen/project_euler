@@ -1,6 +1,7 @@
 (ns project-52)
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (println
    (ffirst
     (filter

@@ -1,6 +1,7 @@
 (ns project-10)
 
-(defn primes-up-to [upper]
+(defn primes-up-to
+  [upper]
   (letfn [(sieve [potentials primes]
             (if-let [p (first potentials)]
               (if (> (* p p) (last potentials))
@@ -10,6 +11,7 @@
               primes))]
     (sieve (range 2 (inc upper)) [])))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (println
    (reduce + (primes-up-to 2000000))))

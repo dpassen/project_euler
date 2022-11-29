@@ -4,7 +4,8 @@
 
 (def ^:const offset (dec (int \A)))
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (letfn [(scale-name [idx name]
             (* (inc idx) (transduce (map #(- (int %) offset)) + name)))]
     (-> (slurp "../../data_files/22.txt")

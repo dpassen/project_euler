@@ -1,6 +1,7 @@
 (ns project-36)
 
-(defn -main [& _args]
+(defn -main
+  [& _args]
   (letfn [(palindrome? [s] (= (seq s) (reverse s)))]
     (println
      (transduce
