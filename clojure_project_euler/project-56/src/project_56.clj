@@ -5,7 +5,7 @@
 
 (defn -main [& _args]
   (letfn [(digital-sum [n]
-            (transduce (comp (map str) (map #(Long/parseLong %))) + (str n)))]
+            (transduce (comp (map str) (map parse-long)) + (str n)))]
     (->> (for [a (range 1 101)
                b (range 1 101)]
            (expt a b))

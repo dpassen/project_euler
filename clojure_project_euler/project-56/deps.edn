@@ -1,5 +1,5 @@
 {:paths ["src"]
  :deps
- {org.clojure/clojure            {:mvn/version "1.10.1"}
-  org.clojure/math.numeric-tower {:mvn/version "0.0.4"}
-  net.cgrand/xforms              {:mvn/version "0.19.0"}}}
+ {org.clojure/clojure            {:mvn/version "1.11.1"}
+  org.clojure/math.numeric-tower {:mvn/version "0.0.5"}
+  net.cgrand/xforms              {:mvn/version "0.19.4"}}}

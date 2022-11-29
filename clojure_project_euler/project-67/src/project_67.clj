@@ -4,7 +4,7 @@
    [clojure.string  :as str]))
 
 (defn -main [& _args]
-  (letfn [(parse-nums [line] (map #(Long/parseLong %) (str/split line #"\s+")))]
+  (letfn [(parse-nums [line] (map parse-long (str/split line #"\s+")))]
     (with-open [rdr (io/reader "../../data_files/67.txt")]
       (println
        (first
