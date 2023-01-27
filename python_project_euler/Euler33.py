@@ -1,6 +1,5 @@
 #!/usr/bin/env python -tt
 
-from __future__ import division
 from functools import reduce
 from operator import mul
 from fractions import Fraction
