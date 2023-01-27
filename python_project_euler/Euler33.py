@@ -17,14 +17,11 @@ def is_curious(num, den):
         second_num = num % 10
         first_den = den // 10
         second_den = den % 10
-        if (
+        return (
             second_den
             and (first_num / second_den) == (num / den)
             and second_num == first_den
-        ):
-            return True
-        else:
-            return False
+        )
 
 
 curious_fractions = (
