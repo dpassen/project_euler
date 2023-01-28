@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python
 
 from itertools import takewhile
 from math import sqrt, floor

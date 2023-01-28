@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python
 
 with open("../data_files/13.txt") as f:
     print(str(sum(int(num) for num in f.read().strip().split("\n")))[:10])

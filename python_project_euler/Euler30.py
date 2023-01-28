@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python
 
 
 def sum_of_nth_power_of_digits(n, num):
