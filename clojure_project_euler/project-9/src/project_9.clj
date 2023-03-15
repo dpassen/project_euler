@@ -1,6 +1,6 @@
 (ns project-9
   (:require
-   [clojure.math.numeric-tower :refer [expt]]))
+   [clojure.math :as math]))
 
 (defn triplets-equal-to
   [sum]
@@ -9,7 +9,7 @@
     (mapcat (fn [c]
               (map (juxt identity (partial - sum c) (constantly c))
                    (range 1 (inc (quot (- sum c) 2))))))
-    (filter (fn [[a b c]] (= (expt c 2) (+ (expt a 2) (expt b 2))))))
+    (filter (fn [[a b c]] (= (math/pow c 2) (+ (math/pow a 2) (math/pow b 2))))))
    (range 1 (inc (quot sum 2)))))
 
 (defn -main

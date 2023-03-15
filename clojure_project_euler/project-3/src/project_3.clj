@@ -1,6 +1,6 @@
 (ns project-3
   (:require
-   [clojure.math.numeric-tower :refer [floor sqrt]]))
+   [clojure.math :as math]))
 
 (defn factors
   [num]
@@ -9,12 +9,12 @@
    (comp
     (filter (comp zero? (partial mod num)))
     (mapcat (juxt identity (partial / num))))
-   (range 1 (inc (floor (sqrt num))))))
+   (range 1 (inc (math/floor (math/sqrt num))))))
 
 (defn prime?
   [num]
   (when (< 1 num)
-    (empty? (for [x     (range 2 (inc (floor (sqrt num))))
+    (empty? (for [x     (range 2 (inc (math/floor (math/sqrt num))))
                   :when (zero? (mod num x))]
               x))))
 

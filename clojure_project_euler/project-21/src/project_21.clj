@@ -1,6 +1,6 @@
 (ns project-21
   (:require
-   [clojure.math.numeric-tower :refer [floor sqrt]]))
+   [clojure.math :as math]))
 
 (defn proper-divisors
   [num]
@@ -10,7 +10,7 @@
     (filter (comp zero? (partial mod num)))
     (mapcat (juxt identity (partial / num)))
     (remove #{num}))
-   (range 1 (inc (floor (sqrt num))))))
+   (range 1 (inc (math/floor (math/sqrt num))))))
 
 (defn amicable?
   [num]

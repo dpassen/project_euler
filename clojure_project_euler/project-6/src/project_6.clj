@@ -1,6 +1,6 @@
 (ns project-6
   (:require
-   [clojure.math.numeric-tower :refer [abs expt]]))
+   [clojure.math.numeric-tower :refer [expt]]))
 
 (defn -main
   [& _args]

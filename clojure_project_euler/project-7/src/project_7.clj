@@ -1,11 +1,11 @@
 (ns project-7
   (:require
-   [clojure.math.numeric-tower :refer [floor sqrt]]))
+   [clojure.math :as math]))
 
 (defn prime?
   [num]
   (when (< 1 num)
-    (empty? (for [x     (range 2 (inc (floor (sqrt num))))
+    (empty? (for [x     (range 2 (inc (math/floor (math/sqrt num))))
                   :when (zero? (mod num x))]
               x))))
 

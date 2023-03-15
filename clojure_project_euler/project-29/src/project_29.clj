@@ -1,5 +1,6 @@
 (ns project-29
-  (:require [clojure.math.numeric-tower :refer [expt]]))
+  (:require
+   [clojure.math :as math]))
 
 (defn -main
   [& _args]
@@ -8,4 +9,4 @@
     (distinct
      (for [a (range 2 101)
            b (range 2 101)]
-       (expt a b))))))
+       (math/pow a b))))))

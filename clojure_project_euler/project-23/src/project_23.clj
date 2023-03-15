@@ -1,6 +1,6 @@
 (ns project-23
   (:require
-   [clojure.math.numeric-tower :refer [floor sqrt]]))
+   [clojure.math :as math]))
 
 (defn factors
   [num]
@@ -9,7 +9,7 @@
    (comp
     (filter (comp zero? (partial mod num)))
     (mapcat (juxt identity (partial / num))))
-   (range 1 (inc (floor (sqrt num))))))
+   (range 1 (inc (math/floor (math/sqrt num))))))
 
 (defn abundant?
   [num]

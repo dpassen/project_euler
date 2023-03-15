@@ -1,6 +1,6 @@
 (ns project-12
   (:require
-   [clojure.math.numeric-tower :refer [floor sqrt]]))
+   [clojure.math :as math]))
 
 (defn triangle-num
   [n]
@@ -13,7 +13,7 @@
    (comp
     (filter (comp zero? (partial mod num)))
     (mapcat (juxt identity (partial / num))))
-   (range 1 (inc (floor (sqrt num))))))
+   (range 1 (inc (math/floor (math/sqrt num))))))
 
 (defn -main
   [& _args]
