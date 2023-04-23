@@ -11,7 +11,5 @@
 (defn -main
   [& _args]
   (->> (range 1 1000)
-       (map (juxt identity cycle-length))
-       (apply max-key second)
-       first
+       (apply max-key cycle-length)
        println))

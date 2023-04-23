@@ -17,7 +17,5 @@
 (defn -main
   [& _args]
   (->> (range 1 1000000)
-       (map (juxt identity (comp count collatz-seq)))
-       (apply max-key second)
-       first
+       (apply max-key (comp count collatz-seq))
        println))

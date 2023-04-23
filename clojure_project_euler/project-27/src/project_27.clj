@@ -25,8 +25,6 @@
              b (take-while (partial > 1001) primes)] ;; for n^2 + an + b to be prime when n = 0,
                                                      ;; b must be prime
          [a b])
-       (map (juxt identity (comp count (partial apply quadratic-primes))))
-       (apply max-key second)
-       first
+       (apply max-key (comp count (partial apply quadratic-primes)))
        (reduce *)
        println))
