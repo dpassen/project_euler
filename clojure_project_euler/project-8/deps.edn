@@ -1,4 +1,4 @@
 {:paths ["src"]
  :deps
- {org.clojure/clojure {:mvn/version "1.11.4"}
-  net.cgrand/xforms   {:mvn/version "0.19.4"}}}
+ {org.clojure/clojure {:mvn/version "1.12.0"}
+  net.cgrand/xforms   {:mvn/version "0.19.6"}}}

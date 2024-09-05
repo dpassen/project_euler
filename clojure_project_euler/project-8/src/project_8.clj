@@ -10,7 +10,7 @@
   (println
    (transduce
     (comp
-     (map #(Character/getNumericValue ^char %))
+     (map ^[char] Character/getNumericValue)
      (partition 13 1)
      (map (partial reduce *)))
     max
