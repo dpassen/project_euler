@@ -10,7 +10,7 @@ impl Iterator for Fibonacci {
         let current = self.current;
 
         self.current = self.next;
-        self.next = current + self.next;
+        self.next += current;
 
         Some(current)
     }
@@ -23,10 +23,14 @@ fn fibonacci() -> Fibonacci {
     }
 }
 
-fn main() {
-    let result: u32 = fibonacci()
-        .take_while(|&x| x <= 4_000_000)
+fn problem_2(n: u32) -> u32 {
+    fibonacci()
+        .take_while(|&x| x < n)
         .filter(|&x| x % 2 == 0)
-        .sum();
+        .sum()
+}
+
+fn main() {
+    let result = problem_2(4_000_000);
     println!("{result}");
 }
