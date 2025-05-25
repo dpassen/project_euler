@@ -10,7 +10,7 @@ fn factors(n: u64) -> HashSet<u64> {
 
 fn is_prime(n: u64) -> bool {
     let upper = n.isqrt();
-    !(2..=upper).any(|x| n % x == 0)
+    (2..=upper).all(|x| n % x != 0)
 }
 
 fn problem_3(n: u64) -> Option<u64> {
