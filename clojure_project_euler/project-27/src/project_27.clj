@@ -27,4 +27,4 @@
          [a b])
        (apply max-key (comp count (partial apply quadratic-primes)))
        (reduce *)
-       println))
+       (println)))

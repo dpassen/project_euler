@@ -6,5 +6,5 @@
   [& _args]
   (->> fibs
        (take-while (comp (partial > 1000) count str))
-       count
-       println))
+       (count)
+       (println)))

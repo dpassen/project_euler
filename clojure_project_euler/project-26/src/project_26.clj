@@ -12,4 +12,4 @@
   [& _args]
   (->> (range 1 1000)
        (apply max-key cycle-length)
-       println))
+       (println)))

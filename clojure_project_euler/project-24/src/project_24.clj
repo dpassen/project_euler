@@ -5,6 +5,6 @@
 (defn -main
   [& _args]
   (-> (range 0 10)
-      combinatorics/permutations
+      (combinatorics/permutations)
       (nth 999999)
-      println))
+      (println)))

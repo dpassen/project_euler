@@ -11,4 +11,4 @@
                b (range 1 101)]
            (expt a b))
          (transduce (map digital-sum) rfs/max)
-         println)))
+         (println))))

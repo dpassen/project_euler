@@ -22,4 +22,4 @@
         (map (juxt identity factors))
         (range))
        (some (fn [[n fs]] (when (< 500 (count fs)) n)))
-       println))
+       (println)))

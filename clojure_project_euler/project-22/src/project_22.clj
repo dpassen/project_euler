@@ -11,6 +11,6 @@
     (-> (slurp "../../data_files/22.txt")
         (str/replace #"\"" "")
         (str/split #",")
-        sort
+        (sort)
         (->> (transduce (map-indexed scale-name) +))
-        println)))
+        (println))))

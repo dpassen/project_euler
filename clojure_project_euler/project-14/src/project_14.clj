@@ -18,4 +18,4 @@
   [& _args]
   (->> (range 1 1000000)
        (apply max-key (comp count collatz-seq))
-       println))
+       (println)))
