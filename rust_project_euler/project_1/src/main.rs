@@ -1,5 +1,7 @@
-fn problem_1(n: i32) -> i32 {
-    (1..n).filter(|x| x % 3 == 0 || x % 5 == 0).sum()
+fn problem_1(n: u32) -> u32 {
+    (1..n)
+        .filter(|&x| x.is_multiple_of(3) || x.is_multiple_of(5))
+        .sum()
 }
 
 fn main() {

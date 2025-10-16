@@ -26,7 +26,7 @@ fn fibonacci() -> Fibonacci {
 fn problem_2(n: u32) -> u32 {
     fibonacci()
         .take_while(|&x| x < n)
-        .filter(|&x| x % 2 == 0)
+        .filter(|&x| x.is_multiple_of(2))
         .sum()
 }
 

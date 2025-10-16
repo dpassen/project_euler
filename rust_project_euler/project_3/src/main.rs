@@ -3,14 +3,14 @@ use std::collections::HashSet;
 fn factors(n: u64) -> HashSet<u64> {
     let upper = n.isqrt();
     (1..=upper)
-        .filter(|x| n % x == 0)
+        .filter(|x| n.is_multiple_of(*x))
         .flat_map(|x| [x, n / x])
         .collect()
 }
 
 fn is_prime(n: u64) -> bool {
     let upper = n.isqrt();
-    (2..=upper).all(|x| n % x != 0)
+    !(2..=upper).any(|x| !n.is_multiple_of(x))
 }
 
 fn problem_3(n: u64) -> Option<u64> {

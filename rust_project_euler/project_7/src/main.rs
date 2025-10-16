@@ -1,6 +1,6 @@
 fn is_prime(n: u32) -> bool {
     let upper = n.isqrt();
-    (2..=upper).all(|x| n % x != 0)
+    !(2..=upper).any(|x| n.is_multiple_of(x))
 }
 
 fn project_7(n: usize) -> Option<u32> {
