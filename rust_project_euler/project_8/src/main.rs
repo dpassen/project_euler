@@ -13,7 +13,7 @@ fn project_8(file_path: &str, size: usize) -> Option<u64> {
         .trim_end()
         .chars()
         .collect();
-    chars[..].windows(size).map(product_of_digits).max()
+    chars.windows(size).map(product_of_digits).max()
 }
 
 fn main() {
